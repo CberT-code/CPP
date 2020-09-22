@@ -6,12 +6,12 @@
 #    By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/21 15:12:58 by cbertola          #+#    #+#              #
-#    Updated: 2020/09/22 21:40:08 by cbertola         ###   ########.fr        #
+#    Updated: 2020/09/22 21:44:00 by cyrillebe        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= annulaire
-SRCSC		= Contact.cpp annulaire.cpp ft_add.cpp ft_search.cpp
+NAME		= annuaire
+SRCSC		= Contact.cpp annuaire.cpp ft_add.cpp ft_search.cpp
 
 SRCSH		= Contact.hpp Header.hpp
 OBJS		= $(SRCSC:%.cpp=%.o)
