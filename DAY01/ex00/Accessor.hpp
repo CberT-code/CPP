@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 16:01:14 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/23 16:44:15 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/23 19:24:38 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,25 @@ class Accessor
 
 		std::string		get_name(void) const;
 		int				set_name(std::string);
+		std::string		get_name_var(void) const;
+		int				set_name_var(std::string);
+		std::string		get_name_class(void) const;
+		int				set_name_class(std::string);
 		std::string		get_type(void) const;
 		int				set_type(std::string);
 		std::string		get_args(void) const;
 		int				set_args(std::string);
-		
+		int				get_ind(void) const;
+		int				get_tab(void) const;
+
 	private:
-		std::string		_name;
 		std::string		_type;
+		std::string		_name;
+		std::string		_name_var;
+		std::string		_name_class;
 		std::string		_args;
-		
+		int				_ind;
+		int				_tab;
 
 };
 
