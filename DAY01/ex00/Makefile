@@ -6,7 +6,7 @@
 #    By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/21 15:12:58 by cbertola          #+#    #+#              #
-#    Updated: 2020/09/22 21:44:00 by cyrillebe        ###   ########.fr        #
+#    Updated: 2020/09/23 12:21:46 by cbertola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,17 @@ SRCSC		= Contact.cpp annuaire.cpp ft_add.cpp ft_search.cpp
 SRCSH		= Contact.hpp Header.hpp
 OBJS		= $(SRCSC:%.cpp=%.o)
 LIBS 		= 
-FLAGS		= -Wall -Wextra -Werror
-CC			= clang++
+CXXFLAGS	= -Wall -Wextra -Werror
+CXX			= clang++
 LOGFILE		= $(LOGPATH) `date +'%y.%m.%d %H:%M:%S'`
 
 all:		${NAME}
 
 .c.o: ${OBJS}
-	@clang++ ${FLAGS} -cpp $< -o ${<:.cpp=.o}
+	@clang++ ${CXXFLAGS} -cpp $< -o ${<:.cpp=.o}
 
 $(NAME):	${OBJS} ${SRCSH}
-			@${CC} ${FLAGS} ${OBJS} ${LIBS} -o ${NAME}
+			@${CXX} ${FLAGS} ${OBJS} ${LIBS} -o ${NAME}
 			@echo "\033[1;32m┌─┐┬ ┬┌─┐┌─┐┌─┐┌─┐┌─┐"
 			@echo 			"└─┐│ ││  │  ├┤ └─┐└─┐"
 			@echo 			"└─┘└─┘└─┘└─┘└─┘└─┘└─┘"
