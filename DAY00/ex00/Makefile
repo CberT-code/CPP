@@ -6,28 +6,28 @@
 #    By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/21 15:12:58 by cbertola          #+#    #+#              #
-#    Updated: 2020/09/23 12:01:51 by cbertola         ###   ########.fr        #
+#    Updated: 2020/09/23 12:18:35 by cbertola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= megaphone
 SRCSC		= megaphone.cpp
 
-#SRCSH		= 
+SRCSH		= 
 OBJS		= $(SRCSC:%.cpp=%.o)
-#LIBS 		= 
-FLAGS		= -Wall -Wextra -Werror
-CC			= clang++
+LIBS 		= 
+CXXFLAGS		= -Wall -Wextra -Werror
+CXX			= clang++
 LOGFILE		= $(LOGPATH) `date +'%y.%m.%d %H:%M:%S'`
 
 all:		${NAME}
 
 .c.o: ${OBJS}
-	clang++ ${FLAGS} -cpp $< -o ${<:.cpp=.o}
+	@clang++ ${CXXFLAGS} -cpp $< -o ${<:.cpp=.o}
 
 
 $(NAME):	${OBJS} ${SRCSH}
-			@${CC} ${FLAGS} ${OBJS} ${LIBS} -o ${NAME}
+			@${CXX} ${CXXFLAGS} ${OBJS} ${LIBS} -o ${NAME}
 			@echo "\033[1;32m┌─┐┬ ┬┌─┐┌─┐┌─┐┌─┐┌─┐"
 			@echo 			"└─┐│ ││  │  ├┤ └─┐└─┐"
 			@echo 			"└─┘└─┘└─┘└─┘└─┘└─┘└─┘"
