@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 13:59:25 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/23 14:51:36 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/23 17:05:33 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Pony
 		int				set_weight(int);
 		std::string		get_name_box(void) const;
 		int				set_name_box(std::string);
-		
+
 	private:
 		std::string		_name;
 		std::string		_color;
