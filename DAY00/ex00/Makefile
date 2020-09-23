@@ -6,16 +6,16 @@
 #    By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/21 15:12:58 by cbertola          #+#    #+#              #
-#    Updated: 2020/09/22 21:39:47 by cbertola         ###   ########.fr        #
+#    Updated: 2020/09/23 12:01:51 by cbertola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= megaphone
 SRCSC		= megaphone.cpp
 
-SRCSH		= 
+#SRCSH		= 
 OBJS		= $(SRCSC:%.cpp=%.o)
-LIBS 		= 
+#LIBS 		= 
 FLAGS		= -Wall -Wextra -Werror
 CC			= clang++
 LOGFILE		= $(LOGPATH) `date +'%y.%m.%d %H:%M:%S'`
@@ -23,7 +23,7 @@ LOGFILE		= $(LOGPATH) `date +'%y.%m.%d %H:%M:%S'`
 all:		${NAME}
 
 .c.o: ${OBJS}
-	@clang++ ${FLAGS} -cpp $< -o ${<:.cpp=.o}
+	clang++ ${FLAGS} -cpp $< -o ${<:.cpp=.o}
 
 
 $(NAME):	${OBJS} ${SRCSH}
