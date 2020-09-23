@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 14:03:36 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/21 15:18:51 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/23 10:05:33 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ int		main(int argc, char *argv[]){
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else{
 		for(int i = 1; i < argc; ++i) {
-			for(unsigned j = 0; j < strlen(argv[i]); ++j) {
-				argv[i][j] = toupper(argv[i][j]);
+			std::string str(argv[i]);
+			for(unsigned j = 0; j < str.length(); ++j) {
+				std::toupper(str.at(j));
 			}
-			std::cout << argv[i];
+			std::cout << str;
 		}
 		std::cout << std::endl;
 	}
