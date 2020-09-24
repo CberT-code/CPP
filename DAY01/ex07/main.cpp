@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 20:50:09 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 21:55:35 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 22:33:53 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int					check_error(int argc, char **argv){
 std::string			replace(std::string line, std::string str, std::string str2)
 {
 	size_t found;
-	(void)str2;
 	found = -1;
 
 	while ((found = line.find(str, found + 1)) != std::string::npos )
