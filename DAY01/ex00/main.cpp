@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 14:20:31 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 11:52:45 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 22:00:22 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ponyOnTheStack(void){
 	<< Stacky.get_name() << " is a big pony\n\n" << RESET;
 }
 
-Pony	*ponyOnTheHeap(void){
+void	ponyOnTheHeap(void){
 	
 	Pony*	Heapy = new Pony("Heapy");
 
@@ -40,16 +40,12 @@ Pony	*ponyOnTheHeap(void){
 	Heapy->set_weight(60);
 	std::cout << "the scale display : " << Heapy->get_weight() << " kg, " << Heapy->get_name() 
 	<< " is a small pony\n\n" << RESET;
-	return (Heapy);
+	delete Heapy;
 }
 
 int main(void)
 {
-	Pony *pony;
-
 	ponyOnTheStack();
-	pony = ponyOnTheHeap();
-	
-	delete pony;
+	ponyOnTheHeap();
 	return 0;
 }
