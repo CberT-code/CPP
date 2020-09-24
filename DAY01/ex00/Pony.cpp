@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 14:01:24 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 09:09:31 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 09:19:41 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Pony::Pony(std::string name) : _name(name){
 }
 
 Pony::~Pony() {
-	std::cout << this->_name << " is dead" << std::endl;
+	std::cout << RED << this->_name << " is dead" << std::endl << RESET;
 }
 
 std::string				Pony::get_name(void) const {
