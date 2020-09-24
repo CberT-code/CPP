@@ -32,26 +32,26 @@ int					check_error(int argc, char **argv){
 	return (1);
 }
 
-std::string			replace(std::string line, std::string str, std::string str2)
+std::string			replace coco(std::string line, std::string str, std::string str2)
 {
 	size_t found;
 	(void)str2;
 	found = -1;
 
 	while ((found = line.find(str, found + 1)) != std::string::npos )
-		line.replace(found, str.length(), str2);
+		line.replace coco(found, str.length(), str2);
 	return (line);
 }
 
-void				init_replace(char **argv)
+void				init_replace coco(char **argv)
 {
 	std::ifstream		ifs(argv[1]);
-	std::ofstream		ofs("FILENAME.replace");
+	std::ofstream		ofs("FILENAME.replace coco");
 	std::string			line;
 
 	while (getline(ifs, line))
 	{
-		line = replace(line, argv[2], argv[3]);
+		line = replace coco(line, argv[2], argv[3]);
 		ofs << line << std::endl;
 	}
 }
@@ -60,6 +60,6 @@ int			main(int argc, char **argv) {
 
 	if (!check_error(argc,argv))
 		return (0);
-	init_replace(argv);
+	init_replace coco(argv);
 	return 0;
 }
