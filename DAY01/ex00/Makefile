@@ -6,14 +6,14 @@
 #    By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/21 15:12:58 by cbertola          #+#    #+#              #
-#    Updated: 2020/09/23 12:21:46 by cbertola         ###   ########.fr        #
+#    Updated: 2020/09/24 09:08:16 by cbertola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= annuaire
-SRCSC		= Contact.cpp annuaire.cpp ft_add.cpp ft_search.cpp
+NAME		= Pony
+SRCSC		= Pony.cpp main.cpp
 
-SRCSH		= Contact.hpp Header.hpp
+SRCSH		= Pony.hpp
 OBJS		= $(SRCSC:%.cpp=%.o)
 LIBS 		= 
 CXXFLAGS	= -Wall -Wextra -Werror
