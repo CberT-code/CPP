@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:00:36 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/22 21:36:26 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 12:10:49 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void		search_contact(Contact *contact)
 	int 	i;
 
 	std::cout << GREEN << "|     index|first name| last name|     login|" << RESET << std::endl;
-	if (reinterpret_cast<Contact*>(contact)[0].get_names(0).empty()){
+	if (contact[0].get_names(0).empty()){
 	 	std::cout << RED << "NO CONTACT" << std::endl << RESET;
 	}
 	else{

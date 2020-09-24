@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 10:10:58 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 12:47:25 by cbertola         ###   ########.fr       */
+/*   Created: 2020/09/24 10:10:49 by cbertola          #+#    #+#             */
+/*   Updated: 2020/09/24 14:36:00 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZombieEvent_H
-#define ZombieEvent_H
+#include "ZombieHorde.hpp" 
 
-#include "Zombie.hpp"
-
-class ZombieEvent
+int			main(void)
 {
-	public:
-		ZombieEvent(std::string);
-		~ZombieEvent(void);
-		
-		void			setZombieType(std::string);
-		Zombie			*newZombie(std::string);
-		Zombie			*randomChump(void);
-		void			announce(std::string);
+	ZombieHorde 	Horde = ZombieHorde(4);
 
-	private:
-		std::string		_ZombieType;
-		std::string		_name;
-};
-
-#endif 
+	std::cout << "THEY RUN AFTER UUUUUUSSSSS!!!!! RRRRUUUUUUUUUNNNNNNNNN!!!!!!\n\n";
+	Horde.announce();
+	return (0);
+}

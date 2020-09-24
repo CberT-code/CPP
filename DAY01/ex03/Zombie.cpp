@@ -1,10 +1,17 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie(void) : 
+_name("DEFAULT"),
+_type("DEFAULT")
+{
+	this->_weapon = "his hands";
+	this->advert();
+}
+
 Zombie::Zombie(std::string name, std::string type) :
 _name(name),
 _type(type)
 {
-	this->_weapon = "his hands";
 	this->advert();
 }
 

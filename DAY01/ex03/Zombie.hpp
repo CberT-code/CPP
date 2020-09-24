@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 10:10:54 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 12:30:42 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:46:31 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 class Zombie
 {
 	public:
+		Zombie(void);
 		Zombie(std::string, std::string);
 		~Zombie(void);
 
@@ -45,8 +46,8 @@ class Zombie
 		std::string			get_weapon(void);
 
 	private:
-		std::string const		_name;
-		std::string const		_type;
+		std::string				_name;
+		std::string				_type;
 		std::string				_weapon;
 };
 #endif
