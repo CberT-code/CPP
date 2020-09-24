@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Header.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 10:09:23 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 10:09:24 by cbertola         ###   ########.fr       */
+/*   Created: 2020/09/24 10:10:54 by cbertola          #+#    #+#             */
+/*   Updated: 2020/09/24 11:37:21 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include "Contact.hpp"
 
 # define RESET   		"\033[0m"
 # define BLACK   		"\033[30m"				/* Black */
@@ -36,9 +34,17 @@
 # define BOLDCYAN    	"\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   	"\033[1m\033[37m"      /* Bold White */
 
-void				add_contact(Contact *contact);
-void				display(Contact *contact);
-void				search_contact(Contact *contact);
-std::string			entry(std::string Name);
+class Zombie
+{
+	public:
+		Zombie(std::string, std::string);
+		~Zombie(void);
 
+		void		advert(void);
+
+	private:
+		std::string const		_name;
+		std::string const		_type;
+		std::string				_weapon;
+};
 #endif

@@ -6,43 +6,50 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 14:20:31 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 09:19:00 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 11:52:45 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-void	ponyOnTheStack(Pony *pony){
+void	ponyOnTheStack(void){
 
-	pony->set_name_box("STACK");
-	std::cout << GREEN << pony->get_name() << " is going to " << pony->get_name_box() << std::endl;
-	pony->set_color("white");
-	std::cout << pony->get_name() << " is " << pony->get_color() << std::endl;
-	std::cout << pony->get_name() << " is eating on the " << pony->get_name_box() << std::endl;
-	std::cout << pony->get_name() << " is eating soooooo much, the farmer put him on the scale\n";
-	pony->set_weight(150);
-	std::cout << "the scale display : " << pony->get_weight() << " kg, " << pony->get_name() << " is a big pony\n" << RESET;
+	Pony	Stacky = Pony("Stacky");
+
+	Stacky.set_name_box("STACK");
+	std::cout << GREEN << Stacky.get_name() << " is going to " << Stacky.get_name_box() << std::endl;
+	Stacky.set_color("white");
+	std::cout << Stacky.get_name() << " is " << Stacky.get_color() << std::endl;
+	std::cout << Stacky.get_name() << " is eating on the " << Stacky.get_name_box() << std::endl;
+	std::cout << Stacky.get_name() << " is eating soooooo much, the farmer put him on the scale\n";
+	Stacky.set_weight(150);
+	std::cout << "the scale display : " << Stacky.get_weight() << " kg, " 
+	<< Stacky.get_name() << " is a big pony\n\n" << RESET;
 }
 
-void	ponyOnTheHeap(Pony *pony){
-	pony->set_name_box("HEAP");
-	std::cout << BLUE << pony->get_name() << " is going to "  << pony->get_name_box() << std::endl;
-	pony->set_color("black");
-	std::cout << pony->get_name() << " is " << pony->get_color() << std::endl;
-	std::cout << pony->get_name() << " is eating on the " << pony->get_name_box() << std::endl;
-	std::cout << pony->get_name() << " do not find anything to eat, the farmer put him on the scale\n";
-	pony->set_weight(60);
-	std::cout << "the scale display : " << pony->get_weight() << " kg, " << pony->get_name() << " is a small pony\n" << RESET;
+Pony	*ponyOnTheHeap(void){
+	
+	Pony*	Heapy = new Pony("Heapy");
+
+	Heapy->set_name_box("HEAP");
+	std::cout << BLUE << Heapy->get_name() << " is going to "  << Heapy->get_name_box() << std::endl;
+	Heapy->set_color("black");
+	std::cout << Heapy->get_name() << " is " << Heapy->get_color() << std::endl;
+	std::cout << Heapy->get_name() << " is eating on the " << Heapy->get_name_box() << std::endl;
+	std::cout << Heapy->get_name() << " do not find anything to eat, the farmer put him on the scale\n";
+	Heapy->set_weight(60);
+	std::cout << "the scale display : " << Heapy->get_weight() << " kg, " << Heapy->get_name() 
+	<< " is a small pony\n\n" << RESET;
+	return (Heapy);
 }
 
 int main(void)
 {
-	Pony	Stacky = Pony("Stacky");
-	Pony*	Heapy = new Pony("Heapy");
+	Pony *pony;
 
-	ponyOnTheStack(&Stacky);
-	ponyOnTheHeap(Heapy);
+	ponyOnTheStack();
+	pony = ponyOnTheHeap();
 	
-	delete Heapy;
+	delete pony;
 	return 0;
 }

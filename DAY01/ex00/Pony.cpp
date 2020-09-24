@@ -6,14 +6,14 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 14:01:24 by cbertola          #+#    #+#             */
-/*   Updated: 2020/09/24 09:19:41 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/09/24 11:52:27 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
 Pony::Pony(std::string name) : _name(name){
-	std::cout << "A new Pony is born, is name is " << name << std::endl;
+	std::cout << "A new Pony is born, is name is " << name << "\n\n";
 }
 
 Pony::~Pony() {
