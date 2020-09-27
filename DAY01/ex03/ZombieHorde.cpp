@@ -20,7 +20,7 @@ ZombieHorde::~ZombieHorde() {
 
 void				ZombieHorde::announce() {
 	
-	for(unsigned i = 0; i < this->_number; ++i) {
+	for(int i = 0; i < this->_number; ++i) {
 		this->_Zombie[i]->advert();
 	}
 }
