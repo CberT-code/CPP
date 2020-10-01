@@ -102,23 +102,6 @@ Fixed						Fixed::operator/( Fixed const & src) const {
 	return (ret);
 }
 
-int							Fixed::getRawBits(void) const{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->RawBits);
-}
-
-void						Fixed::setRawBits(int const raw) {
-	this->RawBits = raw;
-}
-
-float						Fixed::toFloat(void) const {
-	return ( (float)(this->RawBits) / (1 << this->NbrBits) );
-}
-
-int							Fixed::toInt(void) const {
-	return ( (int)(this->RawBits) >> this->NbrBits );
-}
-
 Fixed 						&Fixed::operator++(void) {
 	this->RawBits += 1;
 	return ( *this );
@@ -141,6 +124,24 @@ Fixed 						Fixed::operator--(int) {
     return (obj);
 }
 
+int							Fixed::getRawBits(void) const{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->RawBits);
+}
+
+void						Fixed::setRawBits(int const raw) {
+	this->RawBits = raw;
+}
+
+float						Fixed::toFloat(void) const {
+	return ( (float)(this->RawBits) / (1 << this->NbrBits) );
+}
+
+int							Fixed::toInt(void) const {
+	return ( (int)(this->RawBits) >> this->NbrBits );
+}
+
+
 const Fixed 						&Fixed::min(Fixed const &src1, Fixed const &src2) {
 	if (src1.toFloat() > src2.toFloat())
 		return ((Fixed &)src2);
@@ -153,11 +154,6 @@ const Fixed 						&Fixed::max(Fixed const &src1, Fixed const &src2) {
 	return ((Fixed &)src1);
 }
 
-std::ostream				&operator<<(std::ostream & stream, Fixed const & obj){
-	stream << obj.toFloat();
-	return stream;
-}
-
 const Fixed 						&min( Fixed const & src1, Fixed const & src2) {
 	if (src1.toFloat() > src2.toFloat())
 		return (src2);
@@ -168,4 +164,9 @@ const Fixed 						&max( Fixed const & src1, Fixed const & src2) {
 	if (src1.toFloat() < src2.toFloat())
 		return (src2);
 	return (src1);
+}
+
+std::ostream				&operator<<(std::ostream & stream, Fixed const & obj){
+	stream << obj.toFloat();
+	return stream;
 }
