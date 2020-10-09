@@ -2,22 +2,14 @@
 #ifndef IMATERIASOURCE_H
 #define IMATERIASOURCE_H
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <iomanip>
+#include "AMateria.hpp"
 
 class IMateriaSource
 {
 	public:
-		IMateriaSource(void);
-		IMateriaSource(IMateriaSource const &);
-		virtual ~IMateriaSource(void);
-		IMateriaSource &				operator=( IMateriaSource const &);
-
-	private:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
-
-std::ostream &					operator<<(std::ostream & o, IMateriaSource const &);
 
 #endif

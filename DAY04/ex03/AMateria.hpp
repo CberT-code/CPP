@@ -6,8 +6,8 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
-#include "ICharacter.hpp"
 
+class ICharacter;
 class AMateria
 {
 	public:
@@ -27,4 +27,5 @@ class AMateria
 		std::string				_type;
 };
 
+#include "ICharacter.hpp"
 #endif

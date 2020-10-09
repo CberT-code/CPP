@@ -2,12 +2,9 @@
 #ifndef MATERIASOURCE_H
 #define MATERIASOURCE_H
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <iomanip>
+#include "IMateriaSource.hpp"
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 	public:
 		MateriaSource(void);
@@ -15,9 +12,14 @@ class MateriaSource
 		virtual ~MateriaSource(void);
 		MateriaSource &				operator=( MateriaSource const &);
 
+		virtual void 			learnMateria(AMateria*);
+		virtual AMateria* 		createMateria(std::string const & type);
+
 	private:
+		AMateria *				_inventory[4];
+		int						_nbMateria;
 };
 
-std::ostream &					operator<<(std::ostream & o, MateriaSource const &);
+void							suppr_materia2(AMateria **);
 
 #endif

@@ -15,7 +15,7 @@
 Cure::Cure() : AMateria("cure") {}
 
 Cure::Cure(Cure const & src) {
-	*this = src;
+	Cure::operator=(src);
 }
 
 Cure::~Cure() {}

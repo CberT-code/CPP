@@ -15,7 +15,7 @@
 Ice::Ice() : AMateria("ice") {}
 
 Ice::Ice(Ice const & src) {
-	*this = src;
+	Ice::operator=(src);
 }
 
 Ice::~Ice() {}

@@ -8,6 +8,7 @@ class Character : public ICharacter
 {
 	public:
 		Character(void);
+		Character(std::string);
 		Character(Character const &);
 		virtual ~Character(void);
 		Character &				operator=( Character const &);
@@ -20,8 +21,10 @@ class Character : public ICharacter
 	private:
 		std::string				_name;
 		int						_nbMateria;
-		AMateria[4]				_inventory;
+		AMateria *				_inventory[4];
 		
 };
+
+void							suppr_materia(AMateria **);
 
 #endif

@@ -24,7 +24,6 @@ AMateria::AMateria(AMateria const & src) {
 AMateria::AMateria(std::string const & type){
 	this->_XP = 0;
 	this->_type = type;
-
 }
 
 AMateria::~AMateria() {}
@@ -52,4 +51,6 @@ void						AMateria::use(ICharacter& target) {
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	else if (this->get_type() == "cure")
 		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	else
+		return ;
 }
