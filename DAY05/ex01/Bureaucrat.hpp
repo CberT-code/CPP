@@ -42,7 +42,7 @@ class Bureaucrat
 		int							get_grade() const;
 		void						inc_grade();
 		void						dec_grade();
-		void						signForm(Form);
+		void						signForm(Form *);
 
 	private:
 		const std::string			_name;

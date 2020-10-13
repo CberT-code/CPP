@@ -6,8 +6,11 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <stdlib.h>
 
-class BureauCrat
+class Form;
+
+class Bureaucrat
 {
     class GradeTooHighException : public std::exception
     {
@@ -15,7 +18,7 @@ class BureauCrat
             GradeTooHighException();
             GradeTooHighException(const GradeTooHighException &m);
             GradeTooHighException& operator=(const GradeTooHighException &m);
-            ~GradeTooHighException(void) throw();
+            virtual ~GradeTooHighException(void) throw();
             char const *what(void) const throw();
     };
 
@@ -25,25 +28,30 @@ class BureauCrat
             GradeTooLowException();
             GradeTooLowException(const GradeTooLowException &m);
             GradeTooLowException& operator=(const GradeTooLowException &m);
-            ~GradeTooLowException(void) throw();
+            virtual ~GradeTooLowException(void) throw();
             char const *what(void) const throw();
     };
 	
 	public:
-		BureauCrat(void);
-		BureauCrat(std::string const, int);
-		BureauCrat(BureauCrat const &);
-		virtual ~BureauCrat(void);
-		BureauCrat &				operator=( BureauCrat const &);
+		Bureaucrat(void);
+		Bureaucrat(std::string const, int);
+		Bureaucrat(Bureaucrat const &);
+		virtual ~Bureaucrat(void);
+		Bureaucrat &				operator=( Bureaucrat const &);
 
-		std::string const			get_name() const;
+		const std::string			get_name() const;
 		int							get_grade() const;
 		void						inc_grade();
 		void						dec_grade();
+		void						signForm(Form *) const;
+		void						executeForm (Form const & form);
 
 	private:
-		std::string	const			_name;
+		const std::string			_name;
 		int							_grade;
 };
 
+std::ostream &				operator<<(std::ostream & o, Bureaucrat const &);
+
+#include "Form.hpp"
 #endif

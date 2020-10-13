@@ -18,7 +18,7 @@ TacticalMarine::TacticalMarine() {
 }
 
 TacticalMarine::TacticalMarine(TacticalMarine const & src) {
-	*this = src;
+	TacticalMarine::operator=(src);
 }
 
 TacticalMarine::~TacticalMarine() {

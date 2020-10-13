@@ -58,22 +58,26 @@ void							Bureaucrat::dec_grade(void){
 	if (this->_grade == 150)
 		throw(Bureaucrat::GradeTooLowException());
 	else
-		this->_grade -= 1;
+		this->_grade += 1;
 }
 
-void							Bureaucrat::signForm(Form form){
-	if (this->get_grade() > form.get_gradeSign() )
+void							Bureaucrat::signForm(Form *form){
+	if (form == NULL)
+		return ;
+	if (this->get_grade() > form->get_gradeSign() )
 	{
-		std::cout << this->get_name() << " cant signs " << form.get_name()
+		std::cout << this->get_name() << " cant signs " << form->get_name()
 		<< " because his level is too low" << std::endl;
 	}
-	else if (form.get_sign() == 1)
+	else if (form->get_sign() == 1)
 	{
-		std::cout << this->get_name() << " cant signs " << form.get_name()
+		std::cout << this->get_name() << " cant signs " << form->get_name()
 		<< " because it's already signed" << std::endl;
 	}
-	else
-		std::cout << this->get_name() << " signs " << form.get_name() << std::endl;
+	else{
+		form->beSigned(this);
+		std::cout << this->get_name() << " signs " << form->get_name() << std::endl;
+	}
 }
 
 

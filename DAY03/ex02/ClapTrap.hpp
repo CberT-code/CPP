@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/01 17:22:27 by cbertola          #+#    #+#             */
+/*   Updated: 2020/10/05 15:57:01 by cbertola         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
@@ -6,6 +17,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <stdlib.h>
 
 # define RESET   		"\033[0m"
 # define BLACK   		"\033[30m"				/* Black */

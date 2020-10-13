@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 09:38:43 by cbertola          #+#    #+#             */
-/*   Updated: 2020/10/01 11:10:25 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/10/01 19:51:43 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ SuperTrap::SuperTrap(void) {
 }
 
 SuperTrap::SuperTrap(std::string name) {
-		this->hitPoints = FragTrap::hitPoints;
+	this->hitPoints = FragTrap::hitPoints;
 	this->maxHitPoints = FragTrap::maxHitPoints;
 	this->energyPoints = NinjaTrap::energyPoints;
 	this->maxEnergyPoints = NinjaTrap::maxEnergyPoints;

@@ -18,7 +18,7 @@ AssaultTerminator::AssaultTerminator() {
 }
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const & src) {
-	*this = src;
+	AssaultTerminator::operator=(src);
 }
 
 AssaultTerminator::~AssaultTerminator() {

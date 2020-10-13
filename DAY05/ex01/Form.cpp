@@ -57,15 +57,17 @@ bool						Form::get_sign() const{
 	return (this->_sign);
 }
 
-void						Form::beSigned(Bureaucrat test){
-	if (test.get_grade() > this->get_gradeSign()){
-		test.signForm(*this);
+void						Form::beSigned(Bureaucrat *test){
+	if (test == NULL)
+		return ;
+	if (test->get_grade() > this->get_gradeSign()){
 		throw (Form::GradeTooLowException());
 	}
 	else{
-		test.signForm(*this);
 		if (this->get_sign() == 0)
 			this->_sign = 1;
+		else
+			test->signForm(this);
 	}
 }
 

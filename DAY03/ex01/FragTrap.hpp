@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/01 17:21:59 by cbertola          #+#    #+#             */
+/*   Updated: 2020/10/05 15:57:10 by cbertola         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FRAGTRAP_H
 #define FRAGTRAP_H
@@ -6,6 +17,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <stdlib.h>
 
 # define RESET   		"\033[0m"
 # define BLACK   		"\033[30m"				/* Black */

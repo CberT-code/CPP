@@ -37,7 +37,7 @@ class Form
 		int					get_gradeSign() const;
 		int					get_gradeExec() const;
 		bool				get_sign() const;
-		void				beSigned(Bureaucrat);
+		void				beSigned(Bureaucrat *);
 
 	private:
 		std::string	const		_name;
