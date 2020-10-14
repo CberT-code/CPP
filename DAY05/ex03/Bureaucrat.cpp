@@ -87,8 +87,8 @@ void							Bureaucrat::executeForm (Form const & form){
 		<< " because his level is too low" << std::endl;
 	}
 	else{
-		form.execute(*this);
 		std::cout << this->get_name() << " executs " << form.get_name() << std::endl;
+		form.execute(*this);
 	}
 }
 

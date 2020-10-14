@@ -25,7 +25,7 @@ Foo::Foo(char *str) {
 		this->_dbl = 0;
 	if (this->_dbl == 0 && strlen(str) == 1 && str[0] != '0')
 		this->_dbl = str[0];
-	if (this->_dbl != INFINITY && this->_dbl != -INFINITY && !std::isnan(this->_dbl)){
+	else if (this->_dbl != INFINITY && this->_dbl != -INFINITY && !std::isnan(this->_dbl)){
 		for (size_t i = 0; i < strlen(str); i++)
 		{
 			if (i == 0 && (str[i] == '-' || str[i] == '+'))

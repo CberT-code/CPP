@@ -11,10 +11,20 @@ int main(void)
     {
 		Bureaucrat Jacques = Bureaucrat("Jacques", 1);
 		Intern titi;
-		std::cout << "test Presidential : " << std::endl << std::endl;
-		Form *papa(titi.makeForm("Presidential Pardon", "toto"));
-		papa->beSigned(&Jacques);
-		Jacques.executeForm(*papa);
+
+		Form *President(titi.makeForm("Presidential Pardon", "President"));
+		Jacques.signForm(President);
+		Jacques.executeForm(*President);
+		std::cout << std::endl;
+
+		Form *Robotomy(titi.makeForm("robotomy request", "Robotomy"));
+		Jacques.signForm(Robotomy);
+		Jacques.executeForm(*Robotomy);
+		std::cout << std::endl;
+
+		Form *Shrubbery(titi.makeForm("Shrubbery creation", "Shrubbery"));
+		Jacques.signForm(Shrubbery);
+		Jacques.executeForm(*Shrubbery);
 
 
     }

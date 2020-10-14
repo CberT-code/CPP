@@ -3,6 +3,11 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+#include <stdlib.h>
+#include <math.h>
+#include <fstream>
+#include <string.h>
+#include <iomanip>
 
 class Form;
 

@@ -55,11 +55,11 @@ int main(void)
         Bureaucrat Pauline("Pauline", 150);
         std::cout << Pauline << std::endl;
 
-		std::cout << "Creation de : ShrubberyCreationForm" << std::endl;
+		std::cout << "Creation de : for maison2" << std::endl;
         ShrubberyCreationForm maison2("maison2");
         std::cout << maison2 << std::endl;
 
-		std::cout << "Jacque sign New Form ShrubberyCreationForm :" << std::endl;
+		std::cout << "Pauline sign naison :" << std::endl;
 		Pauline.signForm(&maison2);
 		std::cout << std::endl;
 

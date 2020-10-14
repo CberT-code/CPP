@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 10:09:23 by cbertola          #+#    #+#             */
-/*   Updated: 2020/10/13 14:42:51 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/10/14 09:20:54 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ Form *						Intern::makeForm(std::string name, std::string str2){
 	for (int i = 0; i < 3; i++)
 	{
 		if (str[i] == str1){
+			std::cout << "Intern creates " << str1 << std::endl;
 			return ((this->*forms[i])(str2));
 		}
 	}

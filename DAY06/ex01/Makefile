@@ -6,16 +6,16 @@
 #    By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/21 15:12:58 by cbertola          #+#    #+#              #
-#    Updated: 2020/10/13 18:43:35 by cbertola         ###   ########.fr        #
+#    Updated: 2020/10/14 10:38:26 by cbertola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= ex00
+NAME		= ex01
 SRCS_PATH	= ./
 OBJS_PATH	= ./objs/
-SRCSC		= main.cpp Foo.cpp
+SRCSC		= main.cpp
 
-SRCSH		= Foo.hpp
+SRCSH		=
 SRCS		= $(addprefix $(SRCS_PATH),$(SRCSC))
 OBJS 		= $(addprefix $(OBJS_PATH),$(OBJS_NAME))
 OBJS_NAME	= $(SRCSC:%.cpp=%.o)
