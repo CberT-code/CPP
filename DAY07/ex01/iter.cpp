@@ -6,22 +6,33 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:53:03 by cbertola          #+#    #+#             */
-/*   Updated: 2020/10/14 18:54:53 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/10/15 12:06:40 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <iostream>
 
+// class Awesome {
+// 	public:
+// 		Awesome(void) : _n(42) {return;}
+// 		int 			get(void) const {return this->_n;}
+	
+// 	private:
+// 		int	_n;
+// };
+
+// std::ostream & operator<<( std::ostream & o, Awesome const & rhs) {o << rhs.get(); return o;}
+
+// template<typename T>
+// void print( T & x ) { std::cout << x << std::endl; return; }
+
 template< typename T>
-void	iter(T *tab, size_t lenght, void (*f)(T &)) {
+void	iter(T const *tab, size_t const lenght, void (*f)(T const &)) {
 	if (tab)
 	{
 		for (size_t i = 0; i < lenght; i++)
-		{
 			f(tab[i]);
-		}
-		
 	}
 }
 
@@ -29,7 +40,6 @@ template< typename T>
 void	display(T &it) {
 	std::cout << it << std::endl;
 }
-
 
 int main(void)
 {
@@ -51,3 +61,14 @@ int main(void)
 	
 	return 0;
 }
+
+// int main(){
+// 	int tab[] = {0, 1, 2, 3, 4};
+
+// 	Awesome tab2[5];
+
+// 	iter(tab,5, print);
+// 	iter(tab2,5, print);
+
+// 	return 0;
+// }

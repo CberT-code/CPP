@@ -6,39 +6,46 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 16:54:15 by cbertola          #+#    #+#             */
-/*   Updated: 2020/10/15 10:56:31 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/10/15 11:37:01 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+class Awesome {
+    public:
+        Awesome(int n): _n(n) {}
+        bool operator==(Awesome const &rhs) { return (this->_n == rhs._n); }
+        bool operator=(Awesome const &rhs) { return (this->_n = rhs._n); }
+        bool operator>(Awesome const &rhs) { return (this->_n > rhs._n); }
+        bool operator<(Awesome const &rhs) { return (this->_n < rhs._n); }
+        bool operator>=(Awesome const &rhs) { return (this->_n >= rhs._n); }
+        bool operator<=(Awesome const &rhs) { return (this->_n <= rhs._n); }
+    private:
+        int _n;
+};
 
 template< typename T>
 void		swap(T &x, T &y) {
-	T swap;
-	swap = x;
+	T swap = x;
 	x = y;
 	y = swap;
 }
 
 template< typename T>
-T const		&min(T const &x, T const &y) {
-	if (x == y)
-		return (y);
+T		&min(T &x, T &y) {
 	return (x < y ? x : y);
 }
 
 template< typename T>
-T const		&max(T const &x, T  const &y) {
-	if (x == y)
-		return (y);
+T		&max(T &x, T &y) {
 	return (x > y ? x : y);
 }
 
 int main(void)
 {
-	int 		inta = 2;
-	int 		intb = 1;
+	int			inta = 2;
+	int			intb = 1;
 	float 		floata = 2.5;
 	float 		floatb = 1.5;
 	double 		doublea = 2.5;
@@ -99,7 +106,7 @@ int main(void)
 	std::cout << "inta = " << inta << " = " << &inta << " intb = " << (intb = 1) << " = " << &intb << std::endl;
 	std::cout << "res = " << &min(inta, intb) << std::endl << std::endl;
 
-		std::cout << "----------------------------TEST DU MAX----------------------------" << std::endl;
+	std::cout << "----------------------------TEST DU MAX----------------------------" << std::endl;
 	std::cout << "****INT****" << std::endl;
 	std::cout << "inta = " << inta << " intb = " << (intb = 2) << std::endl;
 	std::cout << "res = " << max(inta, intb) << std::endl << std::endl;
@@ -124,21 +131,16 @@ int main(void)
 	std::cout << "inta = " << inta << " = " << &inta << " intb = " << (intb = 1) << " = " << &intb << std::endl;
 	std::cout << "res = " << &max(inta, intb) << std::endl << std::endl;
 	
+	std::cout << "----------------------------TEST AWESOME----------------------------" << std::endl;
+	Awesome aA(0);
+    Awesome bA(1);
+
+	std::cout << "aA = 0 = " << &aA << " bA = 1 = " << &bA << std::endl;
+	std::cout << "MAX : " << &max(aA, bA) << std::endl;
+    std::cout << "MIN : " << &min(aA, bA) << std::endl;
+	std::cout << "TEST SWAP : " << std::endl;
+	swap(aA, bA);
+	std::cout << "MAX : " << &max(aA, bA) << std::endl;
+    std::cout << "MIN : " << &min(aA, bA) << std::endl;
 	return 0;
 }
-// int main( void ) {
-// 	int a = 2;
-// 	int b = 3;
-	
-// 	::swap( a, b );
-// 	std::cout << "a = " << a << ", b = " << b << std::endl;
-// 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-// 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-// 	std::string c = "chaine1";
-// 	std::string d = "chaine2";
-// 	::swap(c, d);
-// 	std::cout << "c = " << c << ", d = " << d << std::endl;
-// 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-// 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-// 	return 0;
-// }
