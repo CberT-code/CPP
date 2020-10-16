@@ -6,7 +6,7 @@
 /*   By: cbertola <cbertola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 16:54:15 by cbertola          #+#    #+#             */
-/*   Updated: 2020/10/15 11:37:01 by cbertola         ###   ########.fr       */
+/*   Updated: 2020/10/15 15:38:43 by cbertola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ T		&max(T &x, T &y) {
 
 int main(void)
 {
-	int			inta = 2;
-	int			intb = 1;
+	const int			inta = 2;
+	const int			intb = 1;
 	float 		floata = 2.5;
 	float 		floatb = 1.5;
 	double 		doublea = 2.5;
